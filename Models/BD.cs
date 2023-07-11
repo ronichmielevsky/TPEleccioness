@@ -13,11 +13,24 @@ static class BD{
         }
 
         public static int EliminarCandidato(int idCandidato)
-            {
+       {
+        int CandidatosEliminados=0;
+        using (SqlConnection db= new SqlConnection(_connectionString)){
+            string SQL="DELETE FROM Candidato WHERE IdCandidato= @IdCandidato";
+            CandidatosEliminados=db.Execute(SQL,new{IdCandidato=idCandidato});
+        }
+        return CandidatosEliminados;
+       }
         
-            }
         public static Partido VerInfoPartido(int idPartido)
-        {}
+       {
+        Partido MiPartido=null;
+        using (SqlConnection db= new SqlConnection(_connectionString)){
+            string SQL="SELECT * FROM Partido WHERE IdPartido=@Partido";
+            MiPartido=db.QueryFirstOrDeult<Partido>(SQL, new{Partido=idPartido});
+        }
+        return MiPartido;
+       }
         public static Candidato VerInfoCandidato(int idCandidato)
           {}        
         public static ListarPartidos()
