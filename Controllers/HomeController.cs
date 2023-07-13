@@ -31,14 +31,20 @@ public class HomeController : Controller
     }
      public IActionResult AgregarCandidato(int idPartido)
     {
-        
+        ViewBag.idPartido=idPartido;
+
         return View();
     }
     public IActionResult Privacy()
     {
-
         return View();
     }
+
+    [HttpPost] public IActionResult GuardarCandidato(Candidato can)
+    {
+        BD.AgregarCandidato(can);
+       return RedirectToAction (HomeController.ReferenceEquals.VerDetallePartido,BD.VerInfoPartido);
+        }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
