@@ -15,23 +15,23 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        ViewBag.listPartido=BD.ListarPartidos();
+        ViewBag.listPartido = BD.ListarPartidos();
         return View();
     }
     public IActionResult VerDetallePartido(int idPartido)
     {
-        ViewBag.DatosPartido=BD.VerInfoPartido(idPartido);
-        ViewBag.ListaCandidatos=BD.ListarCandidatos(idPartido);
+        ViewBag.DatosPartido = BD.VerInfoPartido(idPartido);
+        ViewBag.ListaCandidatos = BD.ListarCandidatos(idPartido);
         return View();
     }
     public IActionResult VerDetalleCandidato(int idCandidato)
     {
-        ViewBag.DatosCandidato=BD.VerInfoCandidato(idCandidato);
+        ViewBag.DatosCandidato = BD.VerInfoCandidato(idCandidato);
         return View();
     }
-     public IActionResult AgregarCandidato(int idPartido)
+    public IActionResult AgregarCandidato(int idPartido)
     {
-        ViewBag.idPartido=idPartido;
+        ViewBag.idPartido = idPartido;
 
         return View();
     }
@@ -40,11 +40,31 @@ public class HomeController : Controller
         return View();
     }
 
-    [HttpPost] public IActionResult GuardarCandidato(Candidato can)
+    [HttpPost]
+    public IActionResult GuardarCandidato(Candidato can)
     {
         BD.AgregarCandidato(can);
-       return RedirectToAction (HomeController.ReferenceEquals.VerDetallePartido,BD.VerInfoPartido);
-        }
+        ViewBag.DatosPartido = BD.VerInfoPartido(can.IDPartido);
+        ViewBag.ListaCandidatos = BD.ListarCandidatos(can.IDPartido);
+        return View("VerDetallePartido");
+    }
+
+    public IActionResult EliminarCandidato(int idCandidato, int idPartido)
+    {
+        BD.EliminarCandidato(idCandidato);
+        ViewBag.DatosPartido = BD.VerInfoPartido(idPartido);
+        ViewBag.ListaCandidatos = BD.ListarCandidatos(idPartido);
+        return View("VerDetallePartido");
+    }
+
+    IActionResult Elecciones()
+    {
+        return View();
+    }
+    IActionResult Creditos()
+    {
+        return View();
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
