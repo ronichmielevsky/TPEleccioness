@@ -10,7 +10,7 @@ static class BD
         string SQL = "INSERT INTO Candidato(IdCandidato,IdPartido,Apellido,Nombre,FechaNacimiento,Foto,Postulacion) VALUES(@pIdPartido,@pApellido,@pNombre,@pFechaNacimiento,@pFoto,@pPostulacion)";
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            db.Execute(SQL, new { pIdCandidato = can.IDCandidato, pIdPartido = can.IDPartido, pApellido = can.Apellido, pNombre = can.Nombre, pFechaNacimiento = can.FechaNacimiento, pFoto = can.Foto, pPostulacion = can.Postulacion });
+            db.Execute(SQL, new { pIdCandidato = can.IdCandidato, pIdPartido = can.idPartido, pApellido = can.Apellido, pNombre = can.Nombre, pFechaNacimiento = can.FechaNacimiento, pFoto = can.Foto, pPostulacion = can.Postulacion });
         }
     }
 
