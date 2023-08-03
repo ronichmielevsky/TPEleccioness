@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+<div class="container">
 @foreach (Partido item in ViewBag.listPartido)
 {
 <div class="card">
@@ -10,7 +10,8 @@
       <h2 class="card-title">@item.Nombre</h2>
     </div>
         <div class="card-footer">
-      <small class="text-muted"><a href='@Url.Action("VerDetallePartido", new {IDPartido=@item.IDPartido})'><button>haga click aqui, Para ver el detalle del partido.</button></a></small>
+      <small class="text-muted"><a href='@Url.Action("VerDetallePartido","Home", new {idPartido=@item.IDPartido})'><button>ver el detalle del partido.</button></a></small>
     </div>
   </div>
 }
+</div>

@@ -1,0 +1,23 @@
+<div class="partido">
+
+
+    <img src="@ViewBag.DatosPartido.Logo">
+      <h5>Nombre: @ViewBag.DatosPartido.Nombre </h5>
+       <h5>el SitioWeb es @ViewBag.DatosPartido.SitioWeb</h5>
+       <h5>nos fundamos en: @ViewBag.DatosPartido.FechaFundacion </h5>
+         <h5>la cantidad de diputados es: @ViewBag.DatosPartido.CantidadDiputados </h5>
+          <h5>la cantidad de senadores es: @ViewBag.DatosPartido.CantidadSenadores </h5>
+      <small class="text-muted"><a href='@Url.Action("VerDetallePartido", "Home", new {idPartido=@ViewBag.DatosPartido.IDPartido})'></a></small>
+    </div>
+
+@foreach(Candidato item in ViewBag.ListaCandidatos){
+    <h5>el candidato es: </h5>
+    <h5> @item.Nombre </h5>
+    <h5> @item.Apellido </h5>
+    <small class="text-muted"><a href='@Url.Action("VerDetalleCandidato", "Home", new {idCandidato=@item.IdCandidato , idPartido=@ViewBag.DatosPartido.IDPartido})'><button>ver detalle candidato</button></a></small> 
+}
+</div>
+
+
+
+  
