@@ -4,4 +4,5 @@
 <h5>fecha de nacimiento: @ViewBag.DatosCandidato.FechaNacimiento</h5>
 <img src=" @ViewBag.DatosCandidato.Foto">
 <h5>postulacion: @ViewBag.DatosCandidato.Postulacion</h5>
-</div>
+ <small class="text-muted"><a href='@Url.Action("VerDetallePartido", "Home", new {idPartido=@ViewBag.DatosCandidato.idPartido})'><button>ver Partido del candidato</button></a></small> 
+ </div>

@@ -60,11 +60,11 @@ public class HomeController : Controller
         return View("VerDetallePartido");
     }
 
-    IActionResult Elecciones()
+    public IActionResult Elecciones()
     {
         return View();
     }
-    IActionResult Creditos()
+    public IActionResult Creditos()
     {
         return View();
     }

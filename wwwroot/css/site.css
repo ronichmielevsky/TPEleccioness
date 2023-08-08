@@ -38,3 +38,12 @@ body {
 .Partido, img{
   width: 200px;
 }
+.img{
+  display: flex;
+  justify-content: space-around;
+  
+}
+.texto{
+  margin-top: 10%;
+ 
+}
