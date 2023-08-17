@@ -46,3 +46,35 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+
+
+nav
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+ul
+{
+    display: flex;
+    justify-content: space-between;
+}
+li
+{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    list-style: none;
+}
+li a{
+margin: 10px;
+}
+img{
+    width: 100px;
+
+}
+
+nav
+{
+  background-color: rgb(189, 176, 162);
+}

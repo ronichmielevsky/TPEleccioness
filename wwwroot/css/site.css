@@ -45,5 +45,26 @@ body {
 }
 .texto{
   margin-top: 10%;
- 
+ font-size: xx-large;
+ margin:5% ;
+}
+.padreElecciones , .padreC , .detalle
+{
+  border:2px solid black ;
+  background-color: bisque;
+  margin: 10%;
+}
+
+.padreC
+{
+  width: 100%;
+}
+
+.padreC img
+{
+  height: 20%;
+}
+
+h5{
+  margin: 3px;
 }
